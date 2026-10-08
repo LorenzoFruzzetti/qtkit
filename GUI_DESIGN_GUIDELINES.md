@@ -318,8 +318,8 @@ comes from a pure `progress(state)` function, so it cannot disagree with the vie
 
 9.3. **Still written per project**, following the sections above: workers and
 cancellation (5), file opening, recent files and drag-and-drop (4), undo commands, the
-error dialog, the exception hook and logging (6). For a complete application built on the kit, see
-`src/ymaze/gui/` in the Y-maze analysis repository, where qtkit originated.
+error dialog, the exception hook and logging (6). The host application's GUI package
+should add those pieces around the reusable components provided here.
 
 ## Sources
 

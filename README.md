@@ -7,13 +7,16 @@ folder: the code, a runnable demo (`demo.py`) and its own tests (`tests/`).
 
 ## Drop into a new project
 
-Copy three things to the target project root:
+This repository is the `qtkit` package root. Copy its contents into the target
+project's `src/qtkit/` directory:
 
 ```text
 <target_project>/
-|-- GUI_DESIGN_GUIDELINES.md        # what the GUI must do (design rules)
-|-- REUSABLE_PACKAGING_GUIDE.md     # how to restructure the analysis code (optional)
-`-- src/qtkit/                      # this folder, unchanged
+|-- pyproject.toml                  # the target project's package metadata
+|-- src/
+|   |-- <package_name>/              # the target project's application package
+|   `-- qtkit/                       # this repository's contents
+`-- tests/                           # the target project's tests
 ```
 
 Then, in the target project:
@@ -47,15 +50,15 @@ Then, in the target project:
    ```
 
 3. **Start the application GUI from the demo.** Copy `demo.py` to
-   `src/<package>/gui/window.py` (or split it into `actions.py`, `guide.py`,
-   `controller.py`, `window.py`, as in the Y-maze project), then replace:
+   `src/<package_name>/gui/window.py` (or split it into `actions.py`, `guide.py`,
+   `controller.py`, and `window.py`), then replace:
    - `Settings` with the project's config dataclass, using numeric field metadata;
    - `ACTIONS` / `LAYOUT` with the project's commands, with ids namespaced by project;
    - `STEPS` / `progress` with the project's workflow;
    - the central table with the project's views.
-4. **Keep project code out of `src/qtkit/`.** Generic improvements go back into the kit
-   together with a test in `src/qtkit/tests/`. Copy the improved folder to the other
-   projects that use it.
+4. **Keep project code out of `src/qtkit/`.** Generic improvements go back into this
+   package together with a test in `src/qtkit/tests/`. Copy the updated package
+   contents to other projects that use it.
 
 Not provided by the kit (implement per project, following the guidelines): background
 workers and cancellation (§5), the error dialog, exception hook and logging (§6),
