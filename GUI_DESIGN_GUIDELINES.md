@@ -1,7 +1,6 @@
 # Desktop GUI Design Guidelines (Python, Qt + pyqtgraph)
 
-Last updated: 2026-10-08 · Lorenzo Fruzzetti
-Live version: https://claude.ai/code/artifact/f4e468a6-747d-47bb-be2e-08d993779965
+Last updated: 2026-10-08
 
 ## Summary
 
